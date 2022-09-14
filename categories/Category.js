@@ -12,4 +12,9 @@ const Category = connection.define('categories', {
     }
 })
 
+/**
+Category.sync({force:true}).then(()=>{
+    console.log("Tabela criada com sucesso");
+})
+ */
 module.exports = Category

@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router()
 const Category = require('./Category');
 const slugify = require('slugify');
+const Article = require('../articles/Articles');
+
 
 /**
  * salvar categoria

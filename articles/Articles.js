@@ -21,8 +21,11 @@ const Article = connection.define('articles',{
 })
 
 //UMA CATEGORIA TEM MUITOS ARTIGOS
-Category.hasMany(Article)
+Category.hasMany(Article, {onDelete:'cascade'})
 //UM ARTIGO PERTENCE A UMA CATEGORIA
 Article.belongsTo(Category)
+
+
+ 
 
 module.exports = Article

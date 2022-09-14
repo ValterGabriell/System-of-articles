@@ -1,0 +1,65 @@
+<%- include('../../partials/header.ejs') %>
+    <%- include('../../partials/navbar.ejs') %>
+        <div class="container">
+            <hr>
+            <h2>Artigos</h2>
+            <a class="btn btn-success" href="/admin/articles/new">Criar nova artigo</a>
+            <hr>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Titulo</th>
+                        <th>Slug</th>
+                        <th>Categoria</th>
+                        <th>Ações</th>
+
+                    </tr>
+                <tbody>
+
+                    <% articles.forEach(article=>{ %>
+                        <tr>
+                            <th>
+                                <%=article.title%>
+                            </th>
+                            <th>
+                                <%=article.slug%>
+                            </th>
+
+                            <th>
+                                <%=article.category.title%>
+                            </th>
+                            <th>
+                                <form method="POST" action="/articles/delete" style="display: inline;"
+                                    onsubmit="confirmDeletion(event, this)">
+
+                                    <input type="hidden" name="id" value="<%= article.id %>">
+
+                                    <button class="btn btn-danger">Deletar</button>
+                                    <a class="btn btn-warning"
+                                        href="/admin/articles/edit/<%=article.id %>">Editar</button>
+
+
+                                </form>
+
+                            </th>
+                        </tr>
+                        <% }) %>
+
+                </tbody>
+                </thead>
+            </table>
+        </div>
+
+        <%- include('../../partials/footer.ejs') %>
+            <script>
+                function confirmDeletion(event, form) {
+                    //impedir que o formulario seja submetido
+                    event.preventDefault()
+                    //popup
+                    var wantToDelete = confirm("Você quer deletar esse artigo?")
+                    if (wantToDelete) {
+                        form.submit()
+                    }
+                }
+
+            </script>

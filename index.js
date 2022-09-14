@@ -26,12 +26,18 @@ connection.authenticate().then(() => {
     console.log(erro);
 })
 
+
+
 app.use("/", categoriesController)
 app.use('/', articlesController)
 
 
+
 app.get("/", (req, res) => {
-    res.render("index")
+    Article.findAll().then(articles =>{
+        res.render("index", {articles:articles})
+    })
+    
 })
 
 app.listen(8080, () => {
