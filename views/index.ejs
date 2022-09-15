@@ -2,8 +2,9 @@
     <%- include('partials/navbar_home.ejs') %>
 
         <body>
-        
             <hr>
+          
+
             <div class="container">
                 <div class="jumbotron">
                     <h1 class="display-4">Bem vindo!</h1>
@@ -25,14 +26,24 @@
                         </div>
 
                         <div class="card-body">
-                         
-                                <a href="#" class="btn btn-success">Ler artigo</a>
+                                
+                                <a href="/<%= article.slug %>" class="btn btn-success">Ler artigo</a>
                             
                         </div>
                     </div>
                     <br>
                     <% }) %>
 
+                    <div class="row">
+                        <div class="col col-12">
+                            <a style="float: right;" href="/articles/page/2">Proxima pagina</a>
+                        </div>
+                        
+                        <hr>
+                    </div>
+                    <hr>
+
+                  
             </div>
         </body>
 

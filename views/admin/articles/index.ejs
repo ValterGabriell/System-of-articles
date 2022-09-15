@@ -35,11 +35,17 @@
                                     <input type="hidden" name="id" value="<%= article.id %>">
 
                                     <button class="btn btn-danger">Deletar</button>
-                                    <a class="btn btn-warning"
-                                        href="/admin/articles/edit/<%=article.id %>">Editar</button>
-
 
                                 </form>
+
+                                <input type="hidden" name="id" value="<%= article.id %>">
+                                <a class="btn btn-warning" href="/admin/articles/edit/<%= article.id %>">Editar</a>
+                             
+                                
+
+                                    
+
+        
 
                             </th>
                         </tr>
