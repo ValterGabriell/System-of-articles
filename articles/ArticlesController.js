@@ -113,7 +113,7 @@ router.get('/articles/page/:num', (req, res) => {
     }).then(articles => {
         var next;
 
-        if (offset + 4 >= articles.count) {
+        if (offset + 4 >= articles.count && articles.length !== 0) {
             next = false
         } else {
             next = true
