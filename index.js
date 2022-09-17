@@ -2,15 +2,28 @@ const express = require("express")
 const app = express()
 const bodyParser = require('body-parser');
 const connection = require('./database/database');
+const session = require('express-session');
 
 const categoriesController = require('./categories/CategoriesController');
 const articlesController = require('./articles/ArticlesController');
+const usersController = require('./user/UserControler');
 
 const Article = require('./articles/Articles');
 const Category = require('./categories/Category');
+const Users = require('./user/User');
 
 //view engine
 app.set('view engine', 'ejs')
+
+//session
+app.use(session({
+    secret:"kikokikorarara",
+    cookie:{
+        maxAge:30000
+    }
+}))
+
+
 
 //static
 app.use(express.static('public'))
@@ -30,6 +43,8 @@ connection.authenticate().then(() => {
 
 app.use("/", categoriesController)
 app.use('/', articlesController)
+app.use("/", usersController)
+
 
 app.get("/:slug", (req, res) => {
     var slug = req.params.slug
