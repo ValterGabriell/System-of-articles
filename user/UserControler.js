@@ -34,12 +34,15 @@ router.post("/users/create", (req, res) => {
                 email: email,
                 password: hash
             }).then(() => {
-                res.redirect("/")
+                res.json({
+                    email:email,
+                    password:password
+                })
             }).catch((erro) => {
-                res.redirect("/")
+                res.status
             })
         } else {
-            res.redirect("/admin/user/create")
+            res.status
         }
     })
 })
