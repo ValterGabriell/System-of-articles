@@ -34,9 +34,9 @@ router.post("/users/create", (req, res) => {
                 email: email,
                 password: hash
             }).then(() => {
-                res.redirect("/")
+                res.redirect("/login")
             }).catch((erro) => {
-                res.redirect("/")
+                res.redirect("/admin/user/create")
             })
         } else {
             res.redirect("/admin/user/create")
