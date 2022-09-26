@@ -51,7 +51,11 @@ Feito isso, você pode verificar se está tudo certo criando uma nova requisiç�
 ```bash
 http://localhost:8090/
 ``` 
- e clique para logar no canto superior direito para poder administrar as categorias e artigos do seu site!!
+ e clique para logar no canto superior direito para poder administrar as categorias e artigos do seu site. Use a rota abaixo, colando na url do site, para criar um administrador. Em seguida, logue com essa conta.
+ 
+ ```bash
+/admin/user/create
+``` 
 
 
 <h3>Imagens</h3></br>
