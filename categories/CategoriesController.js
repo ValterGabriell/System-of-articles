@@ -3,12 +3,13 @@ const router = express.Router()
 const Category = require('./Category');
 const slugify = require('slugify');
 const Article = require('../articles/Articles');
+const adminAuth = require('../middleware/adminAuth');
 
 
 /**
  * salvar categoria
  */
-router.post("/categories/save", (req, res) => {
+router.post("/categories/save", adminAuth,(req, res) => {
     var title = req.body.title
     if (title != undefined) {
         Category.create({
@@ -26,7 +27,7 @@ router.post("/categories/save", (req, res) => {
 /**
  * Deletar a categoria
  */
-router.post("/categories/delete", (req, res) => {
+router.post("/categories/delete", adminAuth,(req, res) => {
     var idCategory = req.body.id
     if (idCategory != null) {
         Category.destroy({
@@ -43,7 +44,7 @@ router.post("/categories/delete", (req, res) => {
 /**
  * redirecionar para a pagina de edit
  */
-router.get("/admin/categories/edit/:id", (req, res) => {
+router.get("/admin/categories/edit/:id", adminAuth,(req, res) => {
     var idCategory = req.params.id
 
     if (isNaN(idCategory)) {
@@ -78,11 +79,11 @@ router.post("/categories/update", (req, res) => {
     })
 })
 
-router.get("/admin/categories/new", (req, res) => {
+router.get("/admin/categories/new", adminAuth,(req, res) => {
     res.render("admin/categories/new")
 })
 
-router.get("/admin/categories", (req, res) => {
+router.get("/admin/categories", adminAuth,(req, res) => {
     Category.findAll().then(categories => {
         res.render("admin/categories/index", { categories: categories })
     })

@@ -18,7 +18,7 @@ router.get("/admin/articles", adminAuth, (req, res) => {
 
 })
 
-router.post("/articles/delete", (req, res) => {
+router.post("/articles/delete", adminAuth,(req, res) => {
     var idArticle = req.body.id
     if (idArticle != null) {
         Article.destroy({
@@ -32,7 +32,7 @@ router.post("/articles/delete", (req, res) => {
     }
 })
 
-router.get("/admin/articles/new", (req, res) => {
+router.get("/admin/articles/new", adminAuth,(req, res) => {
     Category.findAll({
         order:[['id','DESC']]
     }).then(categories => {
@@ -42,7 +42,7 @@ router.get("/admin/articles/new", (req, res) => {
     })
 })
 
-router.get("/admin/articles/edit/:id", (req, res) => {
+router.get("/admin/articles/edit/:id",adminAuth, (req, res) => {
     var id = req.params.id
     Article.findByPk(id).then(article => {
         Category.findAll().then(categories => {
@@ -55,7 +55,7 @@ router.get("/admin/articles/edit/:id", (req, res) => {
     })
 })
 
-router.post("/article/update", (req, res) => {
+router.post("/article/update",adminAuth, (req, res) => {
     var id = req.body.id
     var title = req.body.title
     var body = req.body.body
@@ -76,7 +76,7 @@ router.post("/article/update", (req, res) => {
 
 })
 
-router.post("/articles/save", (req, res) => {
+router.post("/articles/save", adminAuth,(req, res) => {
     var title = req.body.title
     var body = req.body.body
     var category = req.body.category
