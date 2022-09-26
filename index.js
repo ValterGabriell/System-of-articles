@@ -19,7 +19,7 @@ app.set('view engine', 'ejs')
 app.use(session({
     secret:"kikokikorarara",
     cookie:{
-        maxAge:30000
+        maxAge:1800000
     }
 }))
 
@@ -67,7 +67,9 @@ app.get("/:slug", (req, res) => {
 
 app.get("/", (req, res) => {
     Article.findAll({limit:4}).then(articles => {
-        Category.findAll().then(categories => {
+        Category.findAll({
+          order:[['id', 'DESC']]
+        }).then(categories => {
             res.render("index", { articles: articles, categories: categories })
         })
 
@@ -98,6 +100,6 @@ app.get("/category/:slug", (req, res) => {
 
 
 
-app.listen(8080, () => {
+app.listen(8090, () => {
     console.log('server rodando')
 })

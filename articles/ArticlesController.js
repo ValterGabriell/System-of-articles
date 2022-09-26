@@ -81,14 +81,22 @@ router.post("/articles/save", (req, res) => {
     var body = req.body.body
     var category = req.body.category
 
-    Article.create({
-        title: title,
-        slug: slugify(title),
-        body: body,
-        categoryId: category
-    }).then(() => {
-        res.redirect("/admin/articles")
+    Category.findAll().then((categories)=>{
+        if (categories.length > 0) {
+            Article.create({
+                title: title,
+                slug: slugify(title),
+                body: body,
+                categoryId: category
+            }).then(() => {
+                res.redirect("/admin/articles")
+            })
+        }else{
+            res.redirect("/admin/categories/new")
+        }
     })
+
+
 })
 
 router.get('/articles/page/:num', (req, res) => {

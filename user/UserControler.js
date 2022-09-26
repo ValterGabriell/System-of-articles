@@ -34,15 +34,12 @@ router.post("/users/create", (req, res) => {
                 email: email,
                 password: hash
             }).then(() => {
-                res.json({
-                    email:email,
-                    password:password
-                })
+                res.redirect("/")
             }).catch((erro) => {
-                res.status
+                res.redirect("/")
             })
         } else {
-            res.status
+            res.redirect("/admin/user/create")
         }
     })
 })
@@ -67,7 +64,7 @@ router.post("/authenticate",(req,res)=>{
                     id:user.id,
                     email:user.email
                 }
-                res.redirect("/admin/articles")
+                res.redirect("/admin/categories")
             } else {
                 res.redirect("/login")
             }
