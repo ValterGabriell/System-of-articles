@@ -1,65 +1,65 @@
-<h1 align="center">Sistemas de artigos</h1>
-<p align="center">Backend feito em NodeJS e EJS</p>
-<h4 align="center"> 
-    🟢  Projeto concluído  🟢
+<h1 align="center">Article Systems</h1>
+<p align="center">Backend made in NodeJS and EJS</p>
+<h4 align="center">
+    🟢 Project completed 🟢
 </h4>
 <h2 align="center">
     <img src="https://img.shields.io/static/v1?label=Node&message=Working&color=#430098&style=flat&logo=nodejs"/>
     </h2>
 
-Tabela de conteúdos
-=================
+table of contents
+===================
 <!--ts-->
-   * [Sobre](#sobre)
-   * [Utilizando](#Utilizando)
-   * [Tecnologias](#tecnologias)
-   * [Créditos](#Créditos)
+   * [About](#about)
+   * [Using](#Using)
+   * [Technologies](#technologies)
+   * [Credits](#Credits)
 <!--te-->
 
-<h1>Sobre</h1>
-<p>O backend é um CRUD para um sistema de artigos no qual os administradores conseguem adicionar, editar e remover tanto artigos, quanto as categorias, e os usuários podem ler esses artigos.
+<h1>About</h1>
+<p>The backend is a CRUD for an article system where admins can add, edit and remove both articles and categories, and users can read those articles.
   </br>
-<h1>Como usar</h1>
-<h2>Pré-requisitos</h2>
+<h1>How to use</h1>
+<h2>Prerequisites</h2>
 <img src="https://www.opus-software.com.br/wp-content/uploads/2018/09/nodejs.jpg" width = "250px"></br>
-<p>Antes de começar, você deve ter instalado em sua máquina o Node. Podendo ser baixado através desse <a href = "https://nodejs.org/en/download/">link</a>, e também o MySql que pode ser baixado <a href = "https://www.mysql.com/products/workbench/">aqui</a>.</br>
-<p>Após ter feito a instalação do MySql, abra o workbench e crie um banco de dados chamado</br>
+<p>Before you begin, you must have installed Node. Downloadable via this <a href="https://nodejs.org/en/download/">link</a>, and also MySql downloadable <a href="https://www.mysql .com/products/workbench/">here</a>.</br>
+<p>After installing MySql, open the workbench and create a database called</br>
 
 ```bash
 guiapress
-``` 
-<p>E troque, no código, os atributos "root" e "root" para as suas credenciais do banco:</br>
+```
+<p>And change the "root" and "root" attributes in the code to your bank credentials:</br>
 
 ```bash
 database/database.js
-``` 
+```
 
 
-<h2>Utilizando</h2>
-<p>Após ter feito a instalação, abra o programa em seu editor de código e coloque-o para rodar através do terminal com:</br>
-
-```bash
-nodemon index.js
-``` 
-Feito isso, a aplicação estará rodando localmente. Acesse a URL:
+<h2>Using</h2>
+<p>After installing, open the program in your code editor and run it through the terminal with:</br>
 
 ```bash
 nodemon index.js
-``` 
-Feito isso, você pode verificar se está tudo certo criando uma nova requisição @Get, ponha o "Body" como "Json" e coloque a seguinte url:</br>
+```
+Once this is done, the application will be running locally. Access the URL:
+
+```bash
+nodemon index.js
+```
+Once this is done, you can check if everything is ok by creating a new @Get request, put the "Body" as "Json" and put the following url:</br>
 
 ```bash
 http://localhost:8090/
-``` 
- e clique para logar no canto superior direito para poder administrar as categorias e artigos do seu site. Use a rota abaixo, colando na url do site, para criar um administrador. Em seguida, logue com essa conta.
+```
+ and click to login in the upper right corner to manage your site's categories and articles. Use the route below, pasting in the site url, to create an admin. Then log in with that account.
  
  ```bash
 /admin/user/create
-``` 
+```
 
 
-<h3>Imagens</h3></br>
-<div align = "center">
+<h3>Images</h3></br>
+<div align="center">
 <img src="https://user-images.githubusercontent.com/63808405/192182040-68917994-763c-4bb6-bd03-d71ae5af6b08.png" width = "750px">
 <img src="https://user-images.githubusercontent.com/63808405/192182047-f854d494-0b14-4f46-ae8d-230817d3e86b.png" width = "750px">
 <img src="https://user-images.githubusercontent.com/63808405/192182050-f973f261-0b99-4215-90bb-4fbf9372aacc.png" width = "750px">
@@ -68,7 +68,7 @@ http://localhost:8090/
 <img src="https://user-images.githubusercontent.com/63808405/192182055-3bd97360-c090-4258-90be-1746d18eba1c.png" width = "750px">
   </div>
 
-<h1>Tecnologias</h1>
+<h1>Technologies</h1>
 - NodeJS</br>
 - TinyMCE</br>
 - Sequelize</br>
@@ -77,18 +77,15 @@ http://localhost:8090/
 - Express sessions</br>
 
 
-<h1>Créditos</h1>
+<h1>Credits</h1>
 
 ---
 
 <a href="https://www.linkedin.com/in/valter-gabriel">
  <img style="border-radius: 50%;" src="https://user-images.githubusercontent.com/63808405/171045850-84caf881-ee10-4782-9016-ea1682c4731d.jpeg" width="100px;" alt=""/>
  <br />
- <sub><b>Valter Gabriel</b></sub></a> <a href="https://www.linkedin.com/in/valter-gabriel" title="Linkedin">🚀</a>
+ <sub><b>Valter Gabriel</b></sub></a> <a href="https://www.linkedin.com/in/valter-gabriel" title="Linkedin">🚀</ a>
  
-Feito por Valter Gabriel 👋🏽 Entre em contato!
+Made by Valter Gabriel 👋🏽 Get in touch!
 
-[![Linkedin Badge](https://img.shields.io/badge/-Gabriel-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/valter-gabriel/)](https://www.linkedin.com/in/valter-gabriel/) 
-
-
-
+[![Linkedin Badge](https://img.shields.io/badge/-Gabriel-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/valter-gabriel/ )](https://www.linkedin.com/in/valter-gabriel/)
